@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Заказ Zurik Coin</title>
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<header>
+  <div class="logo">ZurikCoin</div>
+  <nav>
+    <a href="index.html">Главная</a>
+    <a href="order.html">Заказать</a>
+    <a href="thankyou.html">Спасибо</a>
+  </nav>
+</header>
+
+<main style="max-width:600px;margin:auto;padding:20px;">
+  <h2>Оформление заказа</h2>
+  <form action="thankyou.html" method="get" class="order-form" onsubmit="return validateForm()">
+    <label>
+      Имя:
+      <input type="text" name="name" required />
+    </label>
+    <label>
+      Электронная почта:
+      <input type="email" name="email" required />
+    </label>
+    <label>
+      Количество Zurik Coin:
+      <input type="number" name="amount" min="1" required />
+    </label>
+    <button type="submit" class="btn">Оформить заказ</button>
+  </form>
+</main>
+
+<footer>
+  &copy; 2024 Zurik. Все права защищены.
+</footer>
+
+<script>
+function validateForm() {
+  const name = document.querySelector('input[name="name"]').value;
+  const email = document.querySelector('input[name="email"]').value;
+  const amount = document.querySelector('input[name="amount"]').value;
+  if (!name || !email || !amount) {
+    alert("Пожалуйста, заполните все поля");
+    return false;
+  }
+  return true;
+}
+</script>
+</body>
+</html>
